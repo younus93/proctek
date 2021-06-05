@@ -18,6 +18,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('name');
             $table->string('gstin')->unique()->index()->nullable();
             $table->string('pan')->unique()->index()->nullable();
+            $table->unsignedBigInteger('logo_id')->nullable();
             /*
              * Private / Public / LLC / Partnership /
              */
