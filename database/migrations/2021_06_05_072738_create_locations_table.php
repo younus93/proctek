@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamsTable extends Migration
+class CreateLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->index();
-            $table->unsignedBigInteger('organization_id')->index();
-            $table->string('name');
-            $table->boolean('personal_team');
+            $table->string('formatted_address');
+            $table->string('locality');
+            $table->string('district');
+            $table->string('state');
+            $table->string('postal_code');
+            $table->string('google_plus_code');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('locations');
     }
 }
