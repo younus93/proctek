@@ -11,4 +11,6 @@ class Branch extends Model
 {
     use CreatedBy;
 
+    protected $table = 'organization_branches';
+
 }
