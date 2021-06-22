@@ -32,5 +32,6 @@ class CreateMarketCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('market_categories');
+        Schema::dropIfExists('market_sub_categories');
     }
 }

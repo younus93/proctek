@@ -16,6 +16,9 @@ class CreateOrganizationVerificationsTable extends Migration
         Schema::create('organization_verifications', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('organization_id')->references('id')->on('organizations');
+            /*
+             * ID of the user who has verified
+             */
             $table->unsignedBigInteger('user_id')->references('id')->on('users');
             /*
              * 0 - Unverified

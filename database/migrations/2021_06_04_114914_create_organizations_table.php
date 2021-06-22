@@ -30,6 +30,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('website')->nullable();
             $table->json('meta')->nullable();
             $table->unsignedBigInteger('created_by')->references('id')->on('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

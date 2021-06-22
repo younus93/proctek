@@ -24,7 +24,6 @@ class CreateOrganizationVendorsTable extends Migration
              * 3 - Blacklisted
              */
             $table->tinyInteger('status');
-            $table->unsignedBigInteger('sent_by')->references('id')->on('users');
             $table->unsignedBigInteger('accepted_by')->references('id')->on('users');
             $table->timestamps();
         });
